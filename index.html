@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages Test</title>
+    <title>Interactive JS DOM Event Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, GitHub Pages is working!</h1>
+    <h2>JavaScript DOM Events Example</h2>
+    <p>Click the button to change the box color and text.</p>
+
+    <div id="box">Click Me!</div>
+    <button onclick="changeBox()">Change Box</button>
+
+    <script>
+        function changeBox() {
+            let box = document.getElementById("box");
+            let colors = ["lightblue", "lightgreen", "lightcoral", "lightgoldenrodyellow", "lightsalmon"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            box.style.backgroundColor = randomColor;
+            box.innerHTML = "Color Changed!";
+        }
+    </script>
 </body>
 </html>
